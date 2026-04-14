@@ -1,9 +1,7 @@
 // Creating your own async business logic
-
 // This is common when your app needs custom async flow that is not directly provided by fetch().
 
 // For example:
-
 // validate something asynchronously
 // wait for a file/process/task
 // simulate a backend decision
@@ -17,14 +15,15 @@ function checkAge(age) {
       } else {
         reject("Access denied");
       }
-    }, 3000); //setTimeout is javascript builtin function, need time parameter *In this exsample = 3,000MS
+    }, 2000);
   });
 }
 
-checkAge(20)
+checkAge(15)
   .then((message) => {
-    console.log(message);
+    console.log("SUCCESS:", message);
   })
   .catch((error) => {
-    console.error(error);
+    console.error("ERROR:", error);
+    //console.log(error);
   });
